@@ -40,7 +40,7 @@ const LayoutComponent = ({ children }) => {
         className="footer"
       >
         <p>Countries APP created by Nelson Rosales</p>
-        <p>copyrigth &copy; 2021</p>
+        <p>copyrigth &copy; 2023</p>
         <a href="https://github.com/nelson2411" target="_blank">
           <GithubOutlined />
         </a>
