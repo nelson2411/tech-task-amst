@@ -9,7 +9,6 @@ function App() {
     <div>
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/modal:name" exact component={ModalComponent} />
       </Switch>
     </div>
   )

@@ -5,6 +5,7 @@ import { useAllCountries } from "../hooks/useAllCountries"
 import Highlighter from "react-highlight-words"
 import { Link } from "react-router-dom"
 import ModalComponent from "./ModalComponent"
+import InputField from "./InputField"
 
 const TableComponent = () => {
   const memoizedAllCountries = useAllCountries()
@@ -12,6 +13,12 @@ const TableComponent = () => {
   const [searchText, setSearchText] = React.useState("")
   const [searchedColumn, setSearchedColumn] = React.useState("")
   const searchInput = React.useRef(null)
+  const [searchTerm, setSearchTerm] = React.useState("")
+
+  const handleSearchTerm = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm()
     setSearchText(selectedKeys[0])
@@ -130,7 +137,7 @@ const TableComponent = () => {
       title: "Flag",
       dataIndex: "flag",
       key: "flag",
-      responsive: ["xs"],
+      responsive: ["xs", "sm", "md", "lg", "xl"],
       render: (flag) => <img src={flag} alt="flag" width={100} />,
     },
     {
@@ -138,7 +145,7 @@ const TableComponent = () => {
       dataIndex: "name",
       key: "name",
       ...getColumnSearchProps("name"),
-      responsive: ["xs"],
+      responsive: ["xs", "sm", "md"],
       render: (name) => <ModalComponent name={name} />,
     },
     {
@@ -151,24 +158,26 @@ const TableComponent = () => {
       title: "Region",
       dataIndex: "region",
       key: "region",
-      responsive: ["sm"],
+      responsive: ["md"],
     },
     {
       title: "Population",
       dataIndex: "population",
       key: "population",
-      responsive: ["sm"],
+      responsive: ["md"],
     },
   ]
 
   return (
-    <Table
-      dataSource={dataSource}
-      columns={columns}
-      pagination={{
-        position: ["bottomCenter"],
-      }}
-    />
+    <>
+      <Table
+        dataSource={dataSource}
+        columns={columns}
+        pagination={{
+          position: ["bottomCenter"],
+        }}
+      />
+    </>
   )
 }
 
