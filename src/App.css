@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.modal-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(15, 6, 189);
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+}
