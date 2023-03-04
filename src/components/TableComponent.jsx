@@ -3,9 +3,7 @@ import { SearchOutlined } from "@ant-design/icons"
 import { Button, Input, Space, Table } from "antd"
 import { useAllCountries } from "../hooks/useAllCountries"
 import Highlighter from "react-highlight-words"
-import { Link } from "react-router-dom"
 import ModalComponent from "./ModalComponent"
-import InputField from "./InputField"
 
 const TableComponent = () => {
   const memoizedAllCountries = useAllCountries()
@@ -13,11 +11,6 @@ const TableComponent = () => {
   const [searchText, setSearchText] = React.useState("")
   const [searchedColumn, setSearchedColumn] = React.useState("")
   const searchInput = React.useRef(null)
-  const [searchTerm, setSearchTerm] = React.useState("")
-
-  const handleSearchTerm = (e) => {
-    setSearchTerm(e.target.value)
-  }
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm()
