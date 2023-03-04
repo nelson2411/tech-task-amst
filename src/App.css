@@ -8,6 +8,11 @@ body {
   font-family: "Fira Code", monospace;
 }
 
+.ant-menu-item {
+  font-size: 1.2rem;
+  font-family: "Fira Code", monospace;
+}
+
 .modal-btn {
   background: transparent;
   border: none;
@@ -35,6 +40,22 @@ body {
 .ant-modal-content {
   font-size: 1.2rem;
   font-family: "Fira Code", monospace;
+}
+
+.footer {
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  padding: 40px;
+}
+
+.footer svg {
+  font-size: 1.5rem;
+  color: rgb(15, 6, 189);
+}
+
+.footer svg:hover {
+  color: rgb(15, 6, 189);
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
